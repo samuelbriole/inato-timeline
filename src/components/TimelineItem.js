@@ -3,8 +3,8 @@ import randomColor from "randomcolor";
 
 const style = trial => ({
   position: "absolute",
-  right: `${trial.bounds.start}%`,
-  left: `${100 - trial.bounds.end}%`,
+  left: `${trial.bounds.start}%`,
+  right: `${100 - trial.bounds.end}%`,
   backgroundColor: randomColor({
     luminosity: "light",
     format: "rgba",
