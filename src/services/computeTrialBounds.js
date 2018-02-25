@@ -1,3 +1,4 @@
+// calculates the horizontal bounds of each trial, in percentage
 export default trials => {
   const timelineStart = Math.min(...trials.map(trial => trial.start));
   const timelineEnd = Math.max(...trials.map(trial => trial.end));
