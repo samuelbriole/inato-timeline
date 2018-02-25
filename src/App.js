@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import trials from "./trials";
 import TimelineItem from "./components/TimelineItem";
+import { computeTrialBounds } from "./services";
 import "./App.css";
 
 const renderClinicalTrials = trials => {
+  const enhancedTrials = computeTrialBounds(trials);
   return (
     <div className="timeline">
-      {trials.map(trial => <TimelineItem trial={trial} />)}
+      {enhancedTrials.map((trial, index) => (
+        <TimelineItem trial={trial} key={index} />
+      ))}
     </div>
   );
 };

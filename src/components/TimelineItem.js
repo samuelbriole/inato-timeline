@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 
 const style = trial => ({
-  position: "absolute"
+  position: "absolute",
+  right: `${trial.bounds.start}%`,
+  left: `${100 - trial.bounds.end}%`
 });
 
 class TimelineItem extends Component {
