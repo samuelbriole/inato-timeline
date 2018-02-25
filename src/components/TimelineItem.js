@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import randomColor from "randomcolor";
 
-const style = trial => ({
+const style = ({ bounds, heightLevel, overlap }) => ({
   position: "absolute",
-  left: `${trial.bounds.start}%`,
-  right: `${100 - trial.bounds.end}%`,
+  left: `${bounds.start}%`,
+  right: `${100 - bounds.end}%`,
+  top: `${heightLevel / overlap * 100}%`,
+  height: `${100 / overlap}%`,
   backgroundColor: randomColor({
     luminosity: "light",
     format: "rgba",
