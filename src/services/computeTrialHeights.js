@@ -13,14 +13,14 @@ export default trials => {
     for (let j = i + 1; j < sortedTrials.length; j++) {
       // overlap case
       if (sortedTrials[j].start < sortedTrials[i].end) {
-        // we increase the overlap of the overlapping trial (j)
-        sortedTrials[j].overlap += 1;
         // if they have the same height level, we need increment the heightLevel of the overlapping trial (j)
         // and the overlap of the current trial (i)
         if (sortedTrials[i].heightLevel === sortedTrials[j].heightLevel) {
           sortedTrials[j].heightLevel += 1;
           sortedTrials[i].overlap += 1;
         }
+        // we increase the overlap of the overlapping trial (j)
+        sortedTrials[j].overlap = sortedTrials[i].overlap;
       } else {
         break; // no need to go further because the trials are sorted by start date
       }
