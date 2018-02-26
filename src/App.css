@@ -1,3 +1,9 @@
 .App {
   text-align: center;
 }
+
+.timeline {
+  position: relative;
+  height: 200px;
+  width: 100%;
+}
